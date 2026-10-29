@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://amirdev1883.github.io/sitemap.xml
