@@ -1,0 +1,30 @@
+/* Start Bootstrap Personal adaptation. Core upstream theme CSS loads separately.
+   This small override file customizes branding, portraits, project art and responsive spacing. */
+:root{--brand:#173b5e;--brand-2:#2a7093;--ink:#17283a;--soft:#eef4f7;}
+html{scroll-behavior:smooth}body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,Arial,sans-serif;color:var(--ink)}
+a{color:var(--brand)}a:hover{color:var(--brand-2)}
+.text-primary{color:var(--brand)!important}.text-secondary{color:#2d617e!important}
+.btn-primary{background:var(--brand);border-color:var(--brand)}.btn-primary:hover,.btn-primary:focus{background:#0d2b46;border-color:#0d2b46}
+.btn-outline-primary{color:var(--brand);border-color:var(--brand)}.btn-outline-primary:hover{background:var(--brand);border-color:var(--brand)}
+.bg-gradient-primary-to-secondary{background:linear-gradient(135deg,#173b5e 0%,#296587 100%)!important}
+.text-gradient{background:linear-gradient(135deg,#102e4b 0%,#297093 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.brand-last{color:#12263e}.brand-point{color:#4789a3}.navbar-brand{letter-spacing:-.055em;font-size:1.4rem}
+.navbar .nav-link.active{color:#173b5e;font-weight:800}.navbar .nav-link{padding-left:.9rem!important;padding-right:.9rem!important}
+.hero-wrap{background:radial-gradient(circle at 93% 18%,#f1f6fa,transparent 43%)}.hero-copy{max-width:620px}.hero-lead{line-height:1.8;font-size:1.09rem}.hero-copy h1{letter-spacing:-.055em;line-height:1.07}
+.badge{letter-spacing:.07em;font-weight:700;font-size:.7rem;padding:.8rem 1rem;white-space:normal;line-height:1.5}
+/* Replace original template's transparent-background mockup with a proper photographic portrait. */
+.profile{width:min(100%,420px)!important;max-width:420px;height:510px!important;border-radius:32px!important;overflow:hidden;position:relative;box-shadow:0 24px 65px rgba(20,54,80,.16);margin:0 auto;display:block!important}
+.profile picture,.profile .profile-img{display:block;width:100%!important;height:100%!important;position:static!important;transform:none!important;max-width:none!important;max-height:none!important;object-fit:cover;object-position:center 26%}
+.profile .profile-img{border-radius:0!important}
+.hero-socials{display:flex;align-items:center;flex-wrap:wrap;gap:1.2rem}.hero-socials a{text-decoration:none;font-weight:700;font-size:.91rem}
+.hero-socials .bi{margin-right:.3rem}.quick-stat{padding:1.6rem;border:1px solid #e5edf3;background:#fff;border-radius:18px}
+.quick-stat .bi{font-size:1.5rem;color:var(--brand)}.quick-stat h3{font-size:1rem;font-weight:800;margin:1rem 0 .5rem}.quick-stat p{margin:0;color:#657688;font-size:.9rem}
+.project-art{background:linear-gradient(135deg,#e8f0f5,#d5e6f0);width:250px;min-width:250px;min-height:210px}.project-art .bi{color:#31658a;font-size:4.3rem}
+.project-card{transition:transform .2s ease,box-shadow .2s ease}.project-card:hover{transform:translateY(-3px);box-shadow:0 15px 45px rgba(22,47,71,.1)!important}
+.letterspace{letter-spacing:.13em}.skill-badge{background:#eef4f8;color:#234e6c;padding:.6rem .9rem;border-radius:10px;font-size:.9rem;font-weight:700}
+.credential{display:flex;gap:.9rem;align-items:flex-start;background:#f7fafc;border-radius:12px;padding:1rem;height:100%}.credential .bi{font-size:1.35rem}
+.contact-address{overflow-wrap:anywhere}.skip-link{position:absolute;top:-100px;left:12px;padding:12px;background:#fff;z-index:9999}.skip-link:focus{top:12px}
+@media(max-width:991px){.profile{height:420px!important;width:min(100%,360px)!important}.hero-copy{margin:auto}.project-art{width:100%;min-width:0;min-height:130px}.project-art .bi{font-size:3rem}.hero-socials{justify-content:center}}
+@media(max-width:560px){.profile{height:360px!important;width:min(100%,310px)!important;border-radius:22px!important}.hero-copy h1{font-size:3rem}.hero-lead{font-size:1rem}.badge{font-size:.65rem}.btn-lg{font-size:.92rem!important}.hero-socials{gap:.75rem}.hero-wrap{padding-top:1.6rem!important}}
+/* Fallback essentials for file previews when the external upstream theme is unavailable */
+@supports not (display: grid){.row{display:flex;flex-wrap:wrap}}

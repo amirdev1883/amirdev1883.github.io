@@ -1,55 +1,52 @@
-# Amir Arani — Personal Portfolio
+# Amir Arani — Portfolio (Start Bootstrap Personal)
 
-A minimal, responsive portfolio built with plain HTML, CSS, and JavaScript for GitHub Pages.
+This project is an adaptation of the **Start Bootstrap – Personal** website theme.
 
-## Files
+- Original theme: https://github.com/StartBootstrap/startbootstrap-personal
+- Live preview: https://startbootstrap.github.io/startbootstrap-personal/
+- License: MIT (see `LICENSE`)
+- Language: English
 
-- `index.html` — semantic content and professional profile
-- `style.css` — minimal, responsive visual design
-- `script.js` — accessible mobile navigation and automatic footer year
-- `assets/amir-portrait.webp` and `.jpg` — optimized hero portrait
-- `assets/favicon.ico`, `favicon.png`, `apple-touch-icon.png` — photo-based site icons
-- `assets/og-card.png` — social sharing preview including portrait
-- `.nojekyll`, `robots.txt`, `sitemap.xml` — GitHub Pages and search engine files
+## What was customized
 
-## Preview on Ubuntu
+- Four original-theme page types: Home, Resume, Projects and Contact.
+- Amir Arani's professional portrait and custom photo favicon.
+- GitHub projects, education, experience, credentials, contact info, and LinkedIn.
+- Local branding and responsive photo crop in `css/brand.css`.
+- Removed SB Forms placeholder form: no paid form/API token needed. Contact uses `mailto:`.
 
-Run in the project directory:
+## CSS dependency
 
-```bash
-python3 -m http.server 8000
-```
+The original **unmodified** theme CSS is linked directly from the creator's GitHub Pages demo:
 
-Open `http://localhost:8000` in your browser. Stop with `Ctrl+C`.
+`https://startbootstrap.github.io/startbootstrap-personal/css/styles.css`
 
-## Publish to GitHub Pages
+This avoids copying or recreating upstream theme styling, as requested. Your small customization layer is at `css/brand.css`. **The site therefore needs an internet connection to load the upstream theme CSS**, Bootstrap icons and Google Fonts. To make it fully self-hosted, you can download the original `dist/css/styles.css` from the linked upstream repository into `css/styles.css` and replace the external link in each HTML file.
 
-On Ubuntu, download `amir-arani-portfolio-with-photo.zip` to `~/Downloads/` and run:
+## Local preview
+
+Run `python3 -m http.server 8000` from this folder and visit `http://localhost:8000`.
+
+## Replace your existing GitHub Pages portfolio (without deleting .git)
+
+Download and unzip this archive to `~/Downloads/amir-arani-startbootstrap`, then:
 
 ```bash
 cd ~/Downloads
-unzip -o amir-arani-portfolio-with-photo.zip -d .
+mkdir -p amir-arani-startbootstrap
+unzip -o amir-arani-startbootstrap.zip -d amir-arani-startbootstrap
+cp -a ~/Downloads/amir-arani-startbootstrap/. ~/Downloads/amir-arani-portfolio/
 cd ~/Downloads/amir-arani-portfolio
-```
-
-The archive already contains an `amir-arani-portfolio` folder. The `unzip -o` command replaces the existing website files inside that folder while preserving the `.git` folder and any unrelated local files. Then run:
-
-```bash
-git add .
-git commit -m "Add professional portrait to hero and favicon"
+git status
+git add -A
+git commit -m "Switch portfolio to Start Bootstrap Personal theme"
 git push origin main
 ```
 
-If your Git remote uses HTTPS and asks for a username/password, configure GitHub SSH authentication and set the remote to:
+If your shell has SSH login errors, GitHub must have your public SSH key authorized, and origin should use the SSH remote, not HTTPS.
 
-```bash
-git remote set-url origin git@github.com:amirdev1883/amirdev1883.github.io.git
-```
+## Notes
 
-The page URL is https://amirdev1883.github.io/ once GitHub Pages is enabled (Settings → Pages → Deploy from branch `main`, folder `/`).
-
-## Editing content
-
-Update descriptions and education status in `index.html`. The TMU entry is currently labeled **incoming** for Winter 2027; update it after enrollment. All links use plain anchors; there are no frameworks, packages, or build dependencies.
-
-If the favicon does not refresh, hard-reload the browser with Ctrl+Shift+R or open the site in a private window.
+- No invented downloadable resume file is included. Add an actual PDF once you have one.
+- TMU is listed as planned/incoming, not graduated.
+- Some technologies are described as learning interests, not professional certifications.
