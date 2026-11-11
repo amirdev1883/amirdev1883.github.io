@@ -28,3 +28,162 @@ a{color:var(--brand)}a:hover{color:var(--brand-2)}
 @media(max-width:560px){.profile{height:360px!important;width:min(100%,310px)!important;border-radius:22px!important}.hero-copy h1{font-size:3rem}.hero-lead{font-size:1rem}.badge{font-size:.65rem}.btn-lg{font-size:.92rem!important}.hero-socials{gap:.75rem}.hero-wrap{padding-top:1.6rem!important}}
 /* Fallback essentials for file previews when the external upstream theme is unavailable */
 @supports not (display: grid){.row{display:flex;flex-wrap:wrap}}
+
+/* Theme control */
+:root {
+  color-scheme: light;
+  --theme-control-border: #ccdbe6;
+  --theme-control-hover: #e2edf5;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-inline-start: auto;
+  margin-inline-end: .5rem;
+  padding: 0;
+  border: 1px solid var(--theme-control-border);
+  border-radius: 50%;
+  background: var(--soft);
+  color: var(--brand);
+  font-size: 1.125rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.theme-toggle[hidden],
+.theme-toggle[aria-pressed="false"] .bi-sun,
+.theme-toggle[aria-pressed="true"] .bi-moon-stars {
+  display: none;
+}
+
+.theme-toggle:hover {
+  background: var(--theme-control-hover);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+}
+
+/* Dark colors for the Bootstrap utilities and portfolio components. */
+@media screen {
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --ink: #e7eff7;
+    --brand: #a9d3f5;
+    --brand-2: #d9efff;
+    --soft: #23374e;
+    --theme-control-border: #5b738e;
+    --theme-control-hover: #304a66;
+    --theme-surface: #182638;
+    --theme-muted: #b4c4d4;
+    --theme-button-ink: #14243a;
+    --bs-body-color: var(--ink);
+    --bs-body-bg: #101a29;
+    --bs-light-rgb: 19, 31, 46;
+    --bs-border-color: #40546c;
+  }
+
+  :root[data-theme="dark"] .bg-white {
+    background-color: var(--theme-surface) !important;
+  }
+
+  :root[data-theme="dark"] .card {
+    --bs-card-bg: var(--theme-surface);
+  }
+
+  :root[data-theme="dark"] :is(.quick-stat, .skip-link) {
+    background-color: var(--theme-surface);
+  }
+
+  :root[data-theme="dark"] .quick-stat {
+    border-color: var(--bs-border-color);
+  }
+
+  :root[data-theme="dark"] .text-muted {
+    color: var(--theme-muted) !important;
+  }
+
+  :root[data-theme="dark"] .quick-stat p {
+    color: var(--theme-muted);
+  }
+
+  :root[data-theme="dark"] .text-secondary {
+    color: #a1c5e2 !important;
+  }
+
+  :root[data-theme="dark"] .navbar {
+    --bs-navbar-color: var(--theme-muted);
+    --bs-navbar-hover-color: var(--ink);
+    --bs-navbar-toggler-border-color: var(--theme-control-border);
+  }
+
+  :root[data-theme="dark"] .navbar-toggler-icon {
+    filter: invert(1);
+  }
+
+  :root[data-theme="dark"] .brand-last {
+    color: var(--ink);
+  }
+
+  :root[data-theme="dark"] :is(.brand-point, .navbar .nav-link.active, .project-art .bi) {
+    color: var(--brand);
+  }
+
+  :root[data-theme="dark"] .text-gradient {
+    background-image: linear-gradient(135deg, #d9efff, #91c6f1);
+  }
+
+  :root[data-theme="dark"] .hero-wrap {
+    background: radial-gradient(circle at 93% 18%, #22364d, transparent 43%);
+  }
+
+  :root[data-theme="dark"] .project-art {
+    background: linear-gradient(135deg, #20344b, #264761);
+  }
+
+  :root[data-theme="dark"] :is(.credential, .skill-badge) {
+    background: var(--soft);
+  }
+
+  :root[data-theme="dark"] .skill-badge {
+    color: var(--brand);
+  }
+
+  :root[data-theme="dark"] .btn-primary {
+    --bs-btn-color: var(--theme-button-ink);
+    --bs-btn-hover-color: var(--theme-button-ink);
+    --bs-btn-active-color: var(--theme-button-ink);
+    --bs-btn-active-bg: var(--brand-2);
+    --bs-btn-active-border-color: var(--brand-2);
+    --bs-btn-focus-shadow-rgb: 169, 211, 245;
+  }
+
+  :root[data-theme="dark"] .btn-primary:is(:hover, :focus) {
+    background-color: var(--brand-2);
+    border-color: var(--brand-2);
+  }
+
+  :root[data-theme="dark"] :is(.btn-outline-dark, .btn-outline-primary) {
+    --bs-btn-color: var(--brand);
+    --bs-btn-border-color: var(--brand);
+    --bs-btn-hover-color: var(--theme-button-ink);
+    --bs-btn-hover-bg: var(--brand);
+    --bs-btn-hover-border-color: var(--brand);
+    --bs-btn-active-color: var(--theme-button-ink);
+    --bs-btn-active-bg: var(--brand);
+    --bs-btn-active-border-color: var(--brand);
+    --bs-btn-focus-shadow-rgb: 169, 211, 245;
+  }
+}
+
+@media print {
+  .theme-toggle {
+    display: none;
+  }
+}
